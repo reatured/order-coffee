@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 
+const API_BASE = "https://order-coffee-production.up.railway.app";
+
 function CoffeeCard({ coffee, onClick, quantity, setQuantity }) {
   return (
     <div style={{ border: '1px solid #ccc', borderRadius: 8, padding: 16, margin: 8, width: 220, textAlign: 'center', boxShadow: '0 2px 8px #eee', cursor: 'pointer' }} onClick={onClick}>
@@ -21,7 +23,7 @@ function CoffeeList() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:8080/coffees')
+    fetch(`${API_BASE}/coffees`)
       .then(res => res.json())
       .then(data => {
         setCoffees(data);
@@ -60,7 +62,7 @@ function OrderPage() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:8080/coffees')
+    fetch(`${API_BASE}/coffees`)
       .then(res => res.json())
       .then(data => {
         const c = data.find(c => String(c.id) === id);
@@ -73,7 +75,7 @@ function OrderPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/order', {
+    fetch(`${API_BASE}/order`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
