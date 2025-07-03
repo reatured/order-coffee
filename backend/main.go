@@ -28,7 +28,7 @@ func withCORS(h http.HandlerFunc) http.HandlerFunc {
             "https://reatured.github.io/order-my-coffee/": true,
             "http://localhost:3001": true,
             "https://reatured.github.io/order-coffee/": true,
-            "https://reatured.github.io/order-my-coffee/": true,
+            "http://localhost:3000/": true,
         }
         origin := r.Header.Get("Origin")
         if allowedOrigins[origin] {
