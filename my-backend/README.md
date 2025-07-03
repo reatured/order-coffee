@@ -51,4 +51,4 @@ go run main.go
 
 ---
 
-Feel free to modify and expand this project! 
+Feel free to modify and expand this project! Try
