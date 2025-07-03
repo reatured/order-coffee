@@ -24,16 +24,7 @@ type Order struct {
 
 func withCORS(h http.HandlerFunc) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
-        allowedOrigins := map[string]bool{
-            "https://reatured.github.io/order-my-coffee/": true,
-            "http://localhost:3001": true,
-            "https://reatured.github.io/order-coffee/": true,
-            "http://localhost:3000/": true,
-        }
-        origin := r.Header.Get("Origin")
-        if allowedOrigins[origin] {
-            w.Header().Set("Access-Control-Allow-Origin", origin)
-        }
+        w.Header().Set("Access-Control-Allow-Origin", "*")
         w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
         if r.Method == "OPTIONS" {
             w.WriteHeader(http.StatusOK)
