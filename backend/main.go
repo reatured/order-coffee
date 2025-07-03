@@ -25,7 +25,7 @@ type Order struct {
 func withCORS(h http.HandlerFunc) http.HandlerFunc {
     return func(w http.ResponseWriter, r *http.Request) {
         allowedOrigins := map[string]bool{
-            "http://localhost:3000": true,
+            "https://reatured.github.io/order-my-coffee/": true,
             "http://localhost:3001": true,
             "https://reatured.github.io/order-coffee/": true,
             "https://reatured.github.io/order-my-coffee/": true,
