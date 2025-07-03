@@ -110,6 +110,9 @@ func sendOrderEmail(order Order) (bool, error) {
 
     subject := "New Coffee Order"
     body := fmt.Sprintf("Name: %s\nCoffee: %s\nNotes: %s", order.Name, coffeeName, order.Notes)
+    if order.Email != "" {
+        body += fmt.Sprintf("\nCustomer Email: %s", order.Email)
+    }
     msg := "From: " + from + "\n" +
         "To: " + to + "\n" +
         "Subject: " + subject + "\n\n" +
