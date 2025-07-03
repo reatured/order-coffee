@@ -1,5 +1,5 @@
 [
-  { "id": 1, "name": "Iced Americano", "image": "Iced-Americano.jpg" },
+  { "id": 1, "name": "Iced Americano", "image": "IcedAmericano.jpg" },
   { "id": 2, "name": "Latte", "image": "Latte.jpg" },
-  { "id": 3, "name": "Iced Latte", "image": "Iced-Latte.jpg" }
+  { "id": 3, "name": "Iced Latte", "image": "IcedLatte.jpg" }
 ] 
